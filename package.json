@@ -7,10 +7,7 @@
     "node": ">= 5.1.0",
     "npm": ">= 3.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/TerriaJS/TerriaMap"
-  },
+  "repository": "http://github.com/TerriaJS/TerriaMap",
   "dependencies": {
     "terriajs-server": "^2.6.2"
   },
@@ -53,7 +50,7 @@
     "semver": "^5.0.0",
     "style-loader": "^0.17.0",
     "svg-sprite-loader": "^0.3.0",
-    "terriajs": "5.2.3",
+    "terriajs": "git://github.com/Innovisite/terriajs#terriajs_524",
     "terriajs-catalog-editor": "^0.2.0",
     "terriajs-cesium": "1.33.0",
     "terriajs-schema": "latest",
@@ -73,5 +70,7 @@
     "deploy-without-reinstall": "gulp clean && gulp release && npm run deploy-current",
     "deploy-current": "npm run get-deploy-overrides && gulp make-package --serverConfigOverride ./privateserverconfig.json --clientConfigOverride ./wwwroot/privateconfig.json && cd deploy/aws && ./stack create && cd ../..",
     "get-deploy-overrides": "aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ServerConfigOverridePath ./privateserverconfig.json && aws s3 --profile $npm_package_config_awsProfile cp $npm_package_config_awsS3ClientConfigOverridePath ./wwwroot/privateconfig.json"
-  }
+  },
+  "main": "index.js",
+  "author": "fabien <fabien.pelisson@innovisite.com>"
 }
